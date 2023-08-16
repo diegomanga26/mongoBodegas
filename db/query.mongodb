@@ -383,11 +383,11 @@ db.users.insertMany([
 /**
  * *AÑADIENDO DATA A "bodegas":
  */
-use("db_campus_bodegas");
+use("db_campus_bodegas")
 db.bodegas.insertMany([
     {
         id: 11,
-        nombre: 'bodega0',
+        nombre: 'Bodega Principal',
         id_responsable: 16,
         estado: 1,
         created_by: 16,
@@ -395,7 +395,7 @@ db.bodegas.insertMany([
     },
     {
         id: 12,
-        nombre: 'bodega1',
+        nombre: 'Almacén Central',
         id_responsable: 18,
         estado: 1,
         created_by: 18,
@@ -403,7 +403,7 @@ db.bodegas.insertMany([
     },
     {
         id: 13,
-        nombre: 'bodega2',
+        nombre: 'Bodega Norte',
         id_responsable: 18,
         estado: 1,
         created_by: 18,
@@ -411,7 +411,7 @@ db.bodegas.insertMany([
     },
     {
         id: 18,
-        nombre: 'bodega7',
+        nombre: 'Depósito Grande',
         id_responsable: 17,
         estado: 1,
         created_by: 17,
@@ -419,7 +419,7 @@ db.bodegas.insertMany([
     },
     {
         id: 19,
-        nombre: 'bodega8',
+        nombre: 'Bodega de Insumos',
         id_responsable: 11,
         estado: 1,
         created_by: 11,
@@ -427,7 +427,7 @@ db.bodegas.insertMany([
     },
     {
         id: 20,
-        nombre: 'bodega9',
+        nombre: 'Almacén de Productos',
         id_responsable: 18,
         estado: 1,
         created_by: 18,
@@ -435,7 +435,7 @@ db.bodegas.insertMany([
     },
     {
         id: 22,
-        nombre: 'jsjsjss',
+        nombre: 'Bodega de Herramientas',
         id_responsable: 13,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -443,7 +443,7 @@ db.bodegas.insertMany([
     },
     {
         id: 23,
-        nombre: 'leeche',
+        nombre: 'Bodega de Lácteos',
         id_responsable: 13,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -451,7 +451,7 @@ db.bodegas.insertMany([
     },
     {
         id: 24,
-        nombre: 'soto1',
+        nombre: 'Almacén Soto Uno',
         id_responsable: 15,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -459,7 +459,7 @@ db.bodegas.insertMany([
     },
     {
         id: 25,
-        nombre: 'soto2',
+        nombre: 'Almacén Soto Dos',
         id_responsable: 15,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -467,7 +467,7 @@ db.bodegas.insertMany([
     },
     {
         id: 26,
-        nombre: 'prueba',
+        nombre: 'Bodega de Pruebas',
         id_responsable: 12,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -475,7 +475,7 @@ db.bodegas.insertMany([
     },
     {
         id: 27,
-        nombre: 'fsfdf',
+        nombre: 'Bodega de Electrónicos',
         id_responsable: 13,
         estado: 1,
         created_at: ISODate('2022-06-02'),
@@ -483,7 +483,7 @@ db.bodegas.insertMany([
     },
     {
         id: 28,
-        nombre: 'prueba',
+        nombre: 'Depósito de Materiales',
         id_responsable: 12,
         estado: 1,
         created_at: ISODate('2022-06-03'),
@@ -491,7 +491,7 @@ db.bodegas.insertMany([
     },
     {
         id: 29,
-        nombre: 'bodegajuanpablo',
+        nombre: 'Bodega Juan Pablo',
         id_responsable: 19,
         estado: 1,
         created_at: ISODate('2022-06-03'),
@@ -499,7 +499,7 @@ db.bodegas.insertMany([
     },
     {
         id: 30,
-        nombre: 'micasa',
+        nombre: 'Mi Casa Almacén',
         id_responsable: 18,
         estado: 1,
         created_at: ISODate('2022-06-03'),
@@ -507,7 +507,7 @@ db.bodegas.insertMany([
     },
     {
         id: 31,
-        nombre: 'casamedrano',
+        nombre: 'Casa Medrano Bodega',
         id_responsable: 17,
         estado: 1,
         created_at: ISODate('2022-06-03'),
@@ -515,7 +515,7 @@ db.bodegas.insertMany([
     },
     {
         id: 32,
-        nombre: 'centro',
+        nombre: 'Centro de Almacenamiento',
         id_responsable: 18,
         estado: 1,
         created_at: ISODate('2022-06-03'),
@@ -523,7 +523,7 @@ db.bodegas.insertMany([
     },
     {
         id: 35,
-        nombre: 'bodega35',
+        nombre: 'Bodega 35',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-24'),
@@ -531,7 +531,7 @@ db.bodegas.insertMany([
     },
     {
         id: 36,
-        nombre: 'asdefg',
+        nombre: 'Almacén Principal',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-29'),
@@ -539,7 +539,7 @@ db.bodegas.insertMany([
     },
     {
         id: 37,
-        nombre: 'bodega fg',
+        nombre: 'Bodega Fácil',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-29'),
@@ -547,7 +547,7 @@ db.bodegas.insertMany([
     },
     {
         id: 38,
-        nombre: 'bodega fg',
+        nombre: 'Depósito Rápido',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-29'),
@@ -555,7 +555,7 @@ db.bodegas.insertMany([
     },
     {
         id: 39,
-        nombre: 'bodega fg 2',
+        nombre: 'Bodega de Reservas',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-29'),
@@ -563,7 +563,7 @@ db.bodegas.insertMany([
     },
     {
         id: 40,
-        nombre: 'bodega fg 2',
+        nombre: 'Almacén de Emergencia',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-06-29'),
@@ -571,7 +571,7 @@ db.bodegas.insertMany([
     },
     {
         id: 41,
-        nombre: 'Bodega 13.2',
+        nombre: 'Bodega Avanzada',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-07-01'),
@@ -579,7 +579,7 @@ db.bodegas.insertMany([
     },
     {
         id: 42,
-        nombre: 'Bodega Developer 13.2',
+        nombre: 'Desarrollo Bodega',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-07-01'),
@@ -587,7 +587,7 @@ db.bodegas.insertMany([
     },
     {
         id: 43,
-        nombre: 'Bodega Developer 13.2',
+        nombre: 'Bodega Innovadora',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2022-07-11'),
@@ -603,7 +603,7 @@ db.bodegas.insertMany([
     },
     {
         id: 48,
-        nombre: 'Bodega Anderson Atuesta',
+        nombre: 'Depósito Atuesta',
         id_responsable: 11,
         estado: 11,
         created_at: ISODate('2022-07-21'),
@@ -611,7 +611,7 @@ db.bodegas.insertMany([
     },
     {
         id: 49,
-        nombre: 'Bodega Anderson Atuesta555',
+        nombre: 'Almacén Atuesta 555',
         id_responsable: 11,
         estado: 11,
         created_at: ISODate('2022-07-21'),
@@ -619,16 +619,18 @@ db.bodegas.insertMany([
     },
     {
         id: 50,
-        nombre: 'A Bodega',
+        nombre: 'Bodega A',
         id_responsable: 11,
         estado: 1,
         created_at: ISODate('2023-05-25'),
         updated_at: ISODate('2023-05-25')
     }
 ]);
+
 /**
  * *AÑADIENDO DATA A "productos":
  */
+
 use("db_campus_bodegas");
 db.productos.insertMany([
     {
@@ -919,3 +921,22 @@ db.historiales.insertMany([
         updated_at: '2022-07-11'
     }
 ]);
+/**
+ * *PETICIONES DE LAS COLECCIONES:
+ */
+
+/**
+ * !LISTAR TODAS LAS BODEGAS ORDENADAS ALFABETICAMENTE:
+ */
+
+use("db_campus_bodegas");
+db.bodegas.find().sort({ nombre: 1 });
+
+/**
+ * !CREAR BODEGAS:
+ */
+
+/**
+ * !LISTAR TODOS LOS PRODUCTOS EN ORDEN DESCENDENTE POR EL CAMPO TOTAL:
+ */
+
