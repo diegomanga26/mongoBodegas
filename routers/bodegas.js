@@ -14,7 +14,7 @@ appBodegas.get("/", limitGet(), async (req, res) => {
 });
 
 appBodegas.post("/", limitGet(), async (req, res) => {
-
+    if (!req.rateLimit) return;
     try {
         let data = req.body;
         let insert = await bodegas.insertOne(data);

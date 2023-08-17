@@ -44,7 +44,7 @@ tokenJWT.use(async (req, res, next) => {
     const jwt = await jwtconstructor
         .setProtectedHeader({ alg: "HS256", typ: "JWT" })
         .setIssuedAt()
-        .setExpirationTime("1m")
+        .setExpirationTime("30m")
         .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
     req.data = jwt;
     next();
