@@ -10,7 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Expose } from 'class-transformer';
 import { IsDefined, IsNumber, IsString } from 'class-validator';
 export class storageBodegas {
-    constructor(data) { Object.assign(this, data); }
+    constructor(data) {
+        this.id = 0;
+        this.nombre = "BodegaXXXX";
+        this.id_responsable = 0;
+        this.estado = 0;
+        this.created_by = 0;
+        this.update_by = 0;
+    }
 }
 __decorate([
     Expose({ name: 'id-bodegas' }),

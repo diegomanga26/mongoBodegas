@@ -933,10 +933,6 @@ use("db_campus_bodegas");
 db.bodegas.find().sort({ nombre: 1 });
 
 /**
- * !CREAR BODEGAS:
- */
-
-/**
  * !LISTAR TODOS LOS PRODUCTOS EN ORDEN DESCENDENTE POR EL CAMPO TOTAL:
  */
 use("db_campus_bodegas");

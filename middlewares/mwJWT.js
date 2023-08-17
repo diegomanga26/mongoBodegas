@@ -3,12 +3,11 @@ import { SignJWT, jwtVerify } from 'jose';
 import express from 'express';
 import 'reflect-metadata';
 import { plainToClass, classToPlain } from 'class-transformer';
-import storageUsers from '../routers/storage/users';
-import storageBodegas from '../routers/storage/bodegas';
-import storageProductos from '../routers/storage/productos';
-import storageInventarios from '../routers/storage/inventarios';
-import storageHistoriales from '../routers/storage/historiales';
-
+import {storageUsers} from '../routers/storage/users.js';
+import {storageBodegas} from '../routers/storage/bodegas.js';
+import {storageProductos} from '../routers/storage/productos.js';
+import {storageInventarios} from '../routers/storage/inventarios.js';
+import {storageHistoriales} from '../routers/storage/historiales.js';
 
 
 const tokenJWT = express();
@@ -45,11 +44,11 @@ tokenJWT.use(async (req, res, next) => {
     const jwt = await jwtconstructor
         .setProtectedHeader({ alg: "HS256", typ: "JWT" })
         .setIssuedAt()
-        .setExpirationTime("30m")
+        .setExpirationTime("1m")
         .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
     req.data = jwt;
     next();
-})
+});
 
 validateJWT.use(async (req, res, next) => {
     const { authorization } = req.headers;

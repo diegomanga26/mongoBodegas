@@ -28,6 +28,12 @@ export class storageProductos {
     @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro createdBy" } } })
     created_by: number;
 
-    constructor(data: Partial<storageProductos>) { Object.assign(this, data) }
+    constructor(data: Partial<storageProductos>) {
+        this.id = 0;
+        this.nombre = "ProductoXXXX";
+        this.descripcion = "DescripcionProducto";
+        this.estado = 0;
+        this.created_by = 0;
+    }
 
 }
