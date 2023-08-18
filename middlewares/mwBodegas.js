@@ -8,7 +8,6 @@ const appMwBodegas = Router();
 
 appMwBodegasVerify.use(async (req, res, next) => {
     if (!req.rateLimit) return;
-
     let { payload } = req.data;
     const { iat, exp, ...newPayload } = payload
     payload = newPayload
