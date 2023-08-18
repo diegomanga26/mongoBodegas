@@ -10,11 +10,11 @@ let bodegas = db.collection("bodegas");
 
 appBodegas.get("/", limitGet(), appMwBodegasVerify, async (req, res) => {
     if (!req.rateLimit) return;
-    let result = await bodegas.find({}).toArray();
+    let result = await bodegas.find().sort({ nombre: 1 }).toArray();
     res.send(result);
 });
 
-appBodegas.post("/", limitGet(), appMwBodegas, appMwBodegasVerify, async (req, res) => {
+appBodegas.post("/", limitGet(), appMwBodegasVerify, appMwBodegas, async (req, res) => {
     if (!req.rateLimit) return;
     try {
         let data = req.body;

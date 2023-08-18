@@ -16,7 +16,6 @@ export class storageBodegas {
         this.id_responsable = 0;
         this.estado = 0;
         this.created_by = 0;
-        this.update_by = 0;
     }
 }
 __decorate([
@@ -39,19 +38,18 @@ __decorate([
 ], storageBodegas.prototype, "id_responsable", void 0);
 __decorate([
     Expose({ name: 'estadoBodega' }),
-    IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato estadoBodega" }; } }),
+    IsNumber({}, { message: () => { throw { status: 406, message: "Ingresar correctamente el formato estadoBodega" }; } }),
     IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro estadoBodega" }; } }),
     __metadata("design:type", Number)
 ], storageBodegas.prototype, "estado", void 0);
 __decorate([
     Expose({ name: 'createdBy' }),
-    IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato createdBy" }; } }),
+    IsNumber({}, { message: () => { throw { status: 406, message: "Ingresar correctamente el formato createdBy" }; } }),
     IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro createdBy" }; } }),
     __metadata("design:type", Number)
 ], storageBodegas.prototype, "created_by", void 0);
 __decorate([
     Expose({ name: 'updateBy' }),
-    IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato updateBy" }; } }),
-    IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro updateBy" }; } }),
+    IsNumber({}, { message: () => { throw { status: 406, message: "Ingresar correctamente el formato updateBy" }; } }),
     __metadata("design:type", Number)
 ], storageBodegas.prototype, "update_by", void 0);

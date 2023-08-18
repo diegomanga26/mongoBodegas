@@ -19,18 +19,17 @@ export class storageBodegas {
     id_responsable: number;
 
     @Expose({ name: 'estadoBodega' })
-    @IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato estadoBodega" } } })
+    @IsNumber({},{ message: () => { throw { status: 406, message: "Ingresar correctamente el formato estadoBodega" } } })
     @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro estadoBodega" } } })
     estado: number;
 
     @Expose({ name: 'createdBy' })
-    @IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato createdBy" } } })
+    @IsNumber({},{ message: () => { throw { status: 406, message: "Ingresar correctamente el formato createdBy" } } })
     @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro createdBy" } } })
     created_by: number;
 
     @Expose({ name: 'updateBy' })
-    @IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato updateBy" } } })
-    @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro updateBy" } } })
+    @IsNumber({},{ message: () => { throw { status: 406, message: "Ingresar correctamente el formato updateBy" } } })
     update_by: number;
 
     constructor(data: Partial<storageBodegas>) {
@@ -39,7 +38,6 @@ export class storageBodegas {
         this.id_responsable = 0;
         this.estado = 0;
         this.created_by = 0;
-        this.update_by = 0;
     }
 
 }

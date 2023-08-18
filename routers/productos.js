@@ -1,6 +1,7 @@
 import { con } from "../db/atlas.js";
 import { limitGet } from "../middlewares/limit.js"
 import { Router } from "express";
+import { appMwProductos, appMwProductosVerify } from "../middlewares/mwProductos.js";
 
 const appProductos = Router();
 
@@ -14,7 +15,7 @@ appProductos.get("/", limitGet(), async (req, res) => {
     res.send(result);
 });
 
-appProductos.get("/total", limitGet(), async (req, res) => {
+appProductos.get("/total", limitGet(), appMwProductosVerify, async (req, res) => {
     if (!req.rateLimit) return;
     let result = await productos.aggregate([
         {

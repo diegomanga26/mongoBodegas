@@ -11,6 +11,7 @@ import { Expose } from 'class-transformer';
 import { IsDefined, IsNumber, IsString } from 'class-validator';
 export class storageProductos {
     constructor(data) {
+        Object.assign(this, data);
         this.id = 0;
         this.nombre = "ProductoXXXX";
         this.descripcion = "DescripcionProducto";
@@ -31,9 +32,9 @@ __decorate([
     __metadata("design:type", String)
 ], storageProductos.prototype, "nombre", void 0);
 __decorate([
-    Expose({ name: 'descripcionProcesador' }),
-    IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato descripcionProcesador" }; } }),
-    IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro descripcionProcesador" }; } }),
+    Expose({ name: 'descripcionProducto' }),
+    IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato descripcionProducto" }; } }),
+    IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro descripcionProducto" }; } }),
     __metadata("design:type", String)
 ], storageProductos.prototype, "descripcion", void 0);
 __decorate([

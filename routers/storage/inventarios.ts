@@ -33,6 +33,13 @@ export class storageInventarios {
     @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro updatedBy" } } })
     update_by: number;
 
-    constructor(data: Partial<storageInventarios>) { Object.assign(this, data) }
+    constructor(data: Partial<storageInventarios>) {
+        this.id = 0;
+        this.id_bodega = 0;
+        this.id_producto = 0;
+        this.cantidad = 0;
+        this.created_by = 0;
+        this.update_by = 0
+    }
 
 }

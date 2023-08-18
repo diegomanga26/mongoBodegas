@@ -1,13 +1,14 @@
 import { con } from "../db/atlas.js";
 import { limitGet } from "../middlewares/limit.js"
 import { Router } from "express";
+import { appMwInventarios, appMwInventariosVerify } from "../middlewares/mwInventarios.js";
 
 const appInventarios = Router();
 
 let db = await con();
 let inventarios = db.collection("inventarios");
 
-appInventarios.get("/", limitGet(), async (req, res) => {
+appInventarios.get("/", limitGet(), appMwInventariosVerify, async (req, res) => {
     if (!req.rateLimit) return;
     let result = await inventarios.find({}).toArray();
     res.send(result);
