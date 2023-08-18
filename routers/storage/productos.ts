@@ -13,9 +13,9 @@ export class storageProductos {
     @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro nombreProducto" } } })
     nombre: string;
 
-    @Expose({ name: 'descripcionProcesador' })
-    @IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato descripcionProcesador" } } })
-    @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro descripcionProcesador" } } })
+    @Expose({ name: 'descripcionProducto' })
+    @IsString({ message: () => { throw { status: 406, message: "Ingresar correctamente el formato descripcionProducto" } } })
+    @IsDefined({ message: () => { throw { status: 422, message: "Es obligatorio el parametro descripcionProducto" } } })
     descripcion: string;
 
     @Expose({ name: 'estadoProducto' })
@@ -29,6 +29,7 @@ export class storageProductos {
     created_by: number;
 
     constructor(data: Partial<storageProductos>) {
+        Object.assign(this, data);
         this.id = 0;
         this.nombre = "ProductoXXXX";
         this.descripcion = "DescripcionProducto";

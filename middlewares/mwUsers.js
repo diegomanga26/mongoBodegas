@@ -1,27 +1,27 @@
 import 'reflect-metadata';
 import { plainToClass, classToPlain } from 'class-transformer';
 import { validate } from 'class-validator';
-import { storageBodegas } from '../routers/storage/bodegas.js';
+import { storageUsers } from '../routers/storage/users.js';
 import { Router } from "express";
-const appMwBodegasVerify = Router()
-const appMwBodegas = Router();
+const appMwUsersVerify = Router()
+const appMwUsers = Router();
 
-appMwBodegasVerify.use(async (req, res, next) => {
+appMwUsersVerify.use(async (req, res, next) => {
     if (!req.rateLimit) return;
 
     let { payload } = req.data;
     const { iat, exp, ...newPayload } = payload
     payload = newPayload
-    let clone = JSON.stringify(classToPlain(plainToClass(storageBodegas, {}, { ignoreDecorators: true })));
+    let clone = JSON.stringify(classToPlain(plainToClass(storageUsers, {}, { ignoreDecorators: true })));
     let verify = clone === JSON.stringify(payload);
     (!verify) ? res.status(406).send({ status: 406, message: "No autorizado para esta colección" }) : next();
 });
 
 
-appMwBodegas.use(async (req, res, next) => {
+appMwUsers.use(async (req, res, next) => {
 
     try {
-        let data = plainToClass(storageBodegas, req.body);
+        let data = plainToClass(storageUsers, req.body);
         await validate(data)
         req.body = JSON.parse(JSON.stringify(data));
         req.data = undefined;
@@ -32,6 +32,6 @@ appMwBodegas.use(async (req, res, next) => {
 });
 
 export {
-    appMwBodegasVerify,
-    appMwBodegas
+    appMwUsersVerify,
+    appMwUsers
 };

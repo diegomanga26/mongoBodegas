@@ -6,6 +6,7 @@ const appProductos = Router();
 
 let db = await con();
 let productos = db.collection("productos");
+let inventarios = db.collection("inventarios");
 
 appProductos.get("/", limitGet(), async (req, res) => {
     if (!req.rateLimit) return;
@@ -52,6 +53,37 @@ appProductos.get("/total", limitGet(), async (req, res) => {
         }
     ]).toArray();
     res.send(result);
+});
+
+appProductos.post("/", limitGet(), async (req, res) => {
+    if (!req.rateLimit) return;
+    try {
+        const nuevoProducto = {
+            ...req.body
+        };
+
+        const { id } = nuevoProducto
+        console.log(id);
+
+        const insertProductoResult = await productos.insertOne(nuevoProducto);
+
+        const insertInventarioResult = await inventarios.insertOne({
+            id: 10,
+            id_bodega: 10,
+            id_producto: id,
+            cantidad: 50
+        });
+
+        if (insertInventarioResult.insertedId !== undefined) {
+            res.status(200).send({ msg: "Se ha guardado correctamente el Producto y su Inventario." });
+        } else {
+            res.status(400).send({ status: 400, message: "Error en el ingreso de datos." });
+        }
+        res.send()
+    } catch (error) {
+        res.status(400).send({ error: error });
+        console.log(error);
+    }
 });
 
 export default appProductos;

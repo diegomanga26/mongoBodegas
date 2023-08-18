@@ -1,19 +1,20 @@
 import { con } from "../db/atlas.js";
 import { limitGet } from "../middlewares/limit.js"
 import { Router } from "express";
+import { appMwBodegas, appMwBodegasVerify } from "../middlewares/mwBodegas.js";
 
 const appBodegas = Router();
 
 let db = await con();
 let bodegas = db.collection("bodegas");
 
-appBodegas.get("/", limitGet(), async (req, res) => {
+appBodegas.get("/", limitGet(), appMwBodegasVerify, async (req, res) => {
     if (!req.rateLimit) return;
     let result = await bodegas.find({}).toArray();
     res.send(result);
 });
 
-appBodegas.post("/", limitGet(), async (req, res) => {
+appBodegas.post("/", limitGet(), appMwBodegas, appMwBodegasVerify, async (req, res) => {
     if (!req.rateLimit) return;
     try {
         let data = req.body;
